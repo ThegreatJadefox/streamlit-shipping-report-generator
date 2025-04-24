@@ -102,7 +102,7 @@ if st.button("Generate & Download"):
         # Complaints
         pdf.set_font("Helvetica", size=12)
         pdf.cell(0, 8, "Customer Complaint Examples", ln=True)
-        pdf.set_font("DejaVu", "", 12)
+        pdf.set_font("Helvetica", size=12)
         for cmt in complaints.splitlines():
             pdf.ln(2)
             pdf.multi_cell(0, 6, f"• {cmt}")
