@@ -80,27 +80,27 @@ if st.button("Generate & Download"):
         pdf = FPDF()
         pdf.add_page()
         pdf.set_auto_page_break(auto=True, margin=15)
-        pdf.add_font("DejaVu", "", "DejaVuSans.ttf", uni=True)
+        
 
         # PDF Title
-        pdf.set_font("DejaVu", "B", 16)
+        pdf.set_font("Helvetica", size=12)
         pdf.cell(0, 10, doc_title, ln=True)
         pdf.ln(5)
 
         # Summary
-        pdf.set_font("DejaVu", "", 12)
+        pdf.set_font("Helvetica", size=12)
         pdf.multi_cell(0, 6, summary)
         pdf.ln(5)
 
         # Timeline
-        pdf.set_font("DejaVu", "B", 14)
+        pdf.set_font("Helvetica", size=12)
         pdf.cell(0, 8, "Shipping Timeline Comparison", ln=True)
-        pdf.set_font("DejaVu", "", 12)
+        pdf.set_font("Helvetica", size=12)
         pdf.multi_cell(0, 6, timeline)
         pdf.ln(5)
 
         # Complaints
-        pdf.set_font("DejaVu", "B", 14)
+        pdf.set_font("Helvetica", size=12)
         pdf.cell(0, 8, "Customer Complaint Examples", ln=True)
         pdf.set_font("DejaVu", "", 12)
         for cmt in complaints.splitlines():
@@ -109,7 +109,7 @@ if st.button("Generate & Download"):
         pdf.ln(5)
 
         # Final Note
-        pdf.set_font("DejaVu", "I", 12)
+        pdf.set_font("Helvetica", size=12)
         pdf.multi_cell(0, 6, final_note)
 
         pdf_bytes = pdf.output(dest='S')
